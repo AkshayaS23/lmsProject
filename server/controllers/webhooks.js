@@ -58,6 +58,8 @@ export const clerkWebhooks = async (req, res) => {
     }
 }
 
+// Api using stripe
+
 const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY)
 export const stripeWebhooks = async (request, response) => {
     const sig = request.headers['stripe-signature'];
@@ -93,7 +95,7 @@ export const stripeWebhooks = async (request, response) => {
       userData.enrolledCourses.push(courseData._id)
       await userData.save()
 
-      purchaseData.status = 'completetd'
+      purchaseData.status = 'completed'
       await purchaseData.save()
 
       break;

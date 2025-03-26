@@ -1,11 +1,10 @@
-import Course from "../models/course.js"
+import Course from "../models/course.js";
 
 //Get All courses
 
 export const getAllCourse = async (req, res)=>{
     try {
-        const courses = await Course.find({isPublished: true}).
-        select(['-courseContent', '-enrolledStudents']).populate({path: 'educator'})
+        const courses = await Course.find({isPublished: true}).select(['-courseContent', '-enrolledStudents']).populate({path: 'educator'})
 
         res.json({ success: true, courses })
     } catch (error) {
@@ -36,4 +35,3 @@ export const getCourseId = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
-

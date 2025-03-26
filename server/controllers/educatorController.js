@@ -77,7 +77,7 @@ export const educatorDashboardData = async (req, res)=>{
 
         const totalEarnings = purchases.reduce((sum, purchase) => sum + purchase.amount, 0);
 
-        // collect uniqye enrolled student IDs with their course titles
+        // collect unique enrolled student IDs with their course titles
         const enrolledStudentsData = [];
         for(const course of courses){
             const students = await User.find({
@@ -110,8 +110,8 @@ export const getEnrolledStudentsData = async (req, res)=>{
         const courseIds = courses.map(course => course._id);
 
         const purchases = await Purchase.find({
-            courseId: {$in: courseIds},
-            status: 'Completed'
+            courseId: { $in: courseIds },
+            status: 'completed'
         }).populate('userId', 'name imageUrl').populate('courseId', 'courseTitle')
 
         const enrolledStudents = purchases.map(purchase => ({
