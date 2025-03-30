@@ -14,6 +14,9 @@ import StudentsEnrolled from './pages/educator/StudentsEnrolled'
 import Navbar from './components/student/Navbar'
 import "quill/dist/quill.snow.css"; // for course description in educator dashboard (add courses)
 import { ToastContainer } from 'react-toastify';
+import About from './pages/Details/About'
+import Contact from './pages/Details/Contact'
+import PrivacyPolicy from './pages/Details/PrivacyPolicy'
 
 const App = () => {
 
@@ -32,12 +35,15 @@ const App = () => {
         <Route path='/my-enrollments' element={<MyEnrollments/>}/>
         <Route path='/player/:courseId' element={<Player />}/>
         <Route path='/loading/:path' element={<Loading/>}/>
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path='/educator' element={<Educator/>}>
             <Route path='/educator' element={<Dashboard/>}/>
             <Route path='add-course' element={<AddCourse/>}/>
             <Route path='my-courses' element={<MyCourses/>}/>
             <Route path='student-enrolled' element={<StudentsEnrolled/>}/>
-
+            
         </Route>
       </Routes>
     </div>

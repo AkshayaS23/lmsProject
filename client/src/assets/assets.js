@@ -108,24 +108,24 @@ export const dummyEducatorData = {
 export const dummyTestimonial = [
     {
         name: 'Donald Jackman',
-        role: 'SWE 1 @ Amazon',
+        role: 'Software Developer @ Amazon',
         image: assets.profile_img_1,
         rating: 5,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+        feedback: 'This platform has truly transformed my learning experience! The courses are well-structured, and the interactive lessons kept me engaged throughout. Thanks to this LMS, I gained new skills and landed my dream job in the tech industry!',
     },
     {
         name: 'Richard Nelson',
-        role: 'SWE 2 @ Samsung',
+        role: 'HR Manager @ Samsung',
         image: assets.profile_img_2,
         rating: 4,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+        feedback: 'Our company adopted this LMS for employee training, and the results have been phenomenal. The flexibility, in-depth courses, and analytics helped us upskill our team efficiently. Highly recommended for organizations looking to invest in employee development!',
     },
     {
         name: 'James Washington',
-        role: 'SWE 2 @ Google',
+        role: ' Online Instructor',
         image: assets.profile_img_3,
         rating: 4.5,
-        feedback: 'I\'ve been using Imagify for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.',
+        feedback: 'As an educator, I found this LMS incredibly user-friendly and powerful. The ability to create and manage courses effortlessly, interact with students, and track their progress has made my teaching journey smoother and more effective.',
     },
 ];
 
