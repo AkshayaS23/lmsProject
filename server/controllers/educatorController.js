@@ -2,6 +2,7 @@ import {clerkClient} from '@clerk/express'
 import Course from '../models/course.js'
 import {v2 as cloudinary} from 'cloudinary'
 import { Purchase } from '../models/Purchase.js'
+import User  from '../models/user.js'
 
 // update role to educator
 export const updateRoleToEducator = async (req, res)=>{
@@ -40,7 +41,7 @@ export const addCourse = async (req, res)=>{
         newCourse.courseThumbnail = imageUpload.secure_url
         await newCourse.save()
 
-        res.json({ success: true, message: 'Course Added Successfully' })
+        res.json({ success: true, message: 'Course Added' })
 
     } catch (error) {
         res.json({ success: false, message: error.message })
