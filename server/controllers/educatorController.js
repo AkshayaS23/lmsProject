@@ -60,7 +60,7 @@ export const getEducatorCourses = async (req, res) => {
     }
 }
 
-// Get Educator Dashbord Data (Total  earning, Enrolled Students, No.of courses)
+// Get Educator Dashbord Data (Total earning, Enrolled Students, No.of courses)
 
 export const educatorDashboardData = async (req, res)=>{
     try {
@@ -76,7 +76,7 @@ export const educatorDashboardData = async (req, res)=>{
             status: 'Completed'
         });
 
-        const totalEarnings = purchases.reduce((sum, purchase) => sum + purchase.amount, 0);
+        const totalEarnings = purchases.reduce((sum, purchase)=> sum + purchase.amount, 0);
 
         // collect unique enrolled student IDs with their course titles
         const enrolledStudentsData = [];
