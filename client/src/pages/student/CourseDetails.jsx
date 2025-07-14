@@ -8,6 +8,7 @@ import Footer from '../../components/student/Footer'
 import YouTube from 'react-youtube'
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import api from '../../lib/api'
 
 const CourseDetails = () => {
 
@@ -23,7 +24,7 @@ const CourseDetails = () => {
 
   const fetchCourseData = async ()=>{
    try {
-    const { data } = await axios.get(backendUrl + '/api/course/' + id)
+    const { data } = await api.get('/api/course/' + id)
 
     if(data.success){
       setCourseData(data.courseData)
