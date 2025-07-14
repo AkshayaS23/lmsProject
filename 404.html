@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/lmsProject/" />
   </head>
   <body>
-    Redirecting to home...
+    <script>
+      const path = window.location.pathname;
+      const query = window.location.search;
+      const hash = window.location.hash;
+      const base = "/lmsProject";
+
+      window.location.replace(`${base}/index.html?redirect=${path}${query}${hash}`);
+    </script>
   </body>
 </html>
