@@ -4,14 +4,16 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'development' ? '/' : '/lmsProject/',
+    base: mode === 'development' ? '/' : '/lmsProject/', // ✔️ correct base for GitHub Pages
+
     plugins: [
       react(),
+
       viteStaticCopy({
         targets: [
           {
-            src: '404.html',   // 👈 assuming 404.html is in /public or root
-            dest: '.'          // copy to root of dist
+            src: 'public/404.html', 
+            dest: '.' // ✔️ place it in the root of `dist` folder
           }
         ]
       })

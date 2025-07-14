@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      const path = window.location.pathname;
+      const query = window.location.search;
+      const hash = window.location.hash;
+      const base = "/lmsProject";
+
+      window.location.replace(`${base}/index.html?redirect=${path}${query}${hash}`);
+    </script>
+  </body>
+</html>
