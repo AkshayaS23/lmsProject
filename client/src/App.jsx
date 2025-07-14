@@ -17,6 +17,7 @@ import { ToastContainer } from 'react-toastify';
 import About from './pages/Details/About'
 import Contact from './pages/Details/Contact'
 import PrivacyPolicy from './pages/Details/PrivacyPolicy'
+import EnrollmentRedirect from './pages/student/EnrollmentRedirect'
 
 const App = () => {
 
@@ -34,8 +35,8 @@ const App = () => {
         <Route path='/course/:id' element={<CourseDetails/>}/>
         <Route path='/my-enrollments' element={<MyEnrollments/>}/>
         <Route path='/player/:courseId' element={<Player />}/>
-        <Route path='/loading/:path' element={<Loading/>}/>
-        <Route path="loading/my-enrollments" element={<MyEnrollments />} />
+        <Route path="/loading/my-enrollments" element={<EnrollmentRedirect />} />
+        <Route path="/loading/:path" element={<Loading />} /> 
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
