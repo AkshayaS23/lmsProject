@@ -17,7 +17,11 @@ await connect()
 await connectCloudinary()
 
 //Middlewares
-app.use(cors())
+app.use(cors({
+  origin: 'https://akshayas23.github.io',
+  credentials: true
+}));
+
 app.use(clerkMiddleware())
 
 //Routes

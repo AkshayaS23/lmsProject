@@ -24,7 +24,7 @@ const CourseDetails = () => {
 
   const fetchCourseData = async ()=>{
    try {
-    const { data } = await api.get('/api/course/' + id)
+    const { data } = await api.get(`/api/course/${id}`);
 
     if(data.success){
       setCourseData(data.courseData)
