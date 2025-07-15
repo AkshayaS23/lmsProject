@@ -6,8 +6,10 @@ import { toast } from 'react-toastify'
 import axios from 'axios'
 
 const MyEnrollments = () => {
-  const { enrolledCourses, calculateCourseDuration, navigate, userData, fetchUserEnrolledCourses, backendUrl, getToken, calculateNoOfLectures} = useContext(AppContext)
-
+  const { loading, enrolledCourses, calculateCourseDuration, navigate, userData, fetchUserEnrolledCourses, backendUrl, getToken, calculateNoOfLectures} = useContext(AppContext)
+  if (loading || !userData) {
+  return <div className="text-center py-10">Loading your enrollments...</div>;
+}
   const [progressArray, setProgressArray] = useState([])
 
   const getCourseProgress = async () => {
@@ -30,7 +32,7 @@ const MyEnrollments = () => {
   }
 
   useEffect(()=>{
-    if(userData){
+    if(userData && enrolledCourses.length === 0){
       fetchUserEnrolledCourses()
     }
   },[userData])

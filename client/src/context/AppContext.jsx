@@ -19,6 +19,7 @@ export const AppContextProvider = (props) =>{
     const {getToken} = useAuth()
     const {user} = useUser()
 
+    const [loading, setLoading] = useState(true);
     const [allCourses, setAllCourses] = useState([])
     const [isEducator, setIsEducator] = useState(false)
     const [enrolledCourses, setEnrolledCourses] = useState([])
@@ -129,18 +130,29 @@ export const AppContextProvider = (props) =>{
     },[])
 
     
-    useEffect(()=>{
-        if(user){
-            fetchUserData()
-            fetchUserEnrolledCourses()
-        }
-    },[user])
+   useEffect(() => {
+  const fetchAllUserData = async () => {
+    try {
+      if (user) {
+        await fetchUserData();              // fetch user info from backend
+        await fetchUserEnrolledCourses();   // fetch enrollments
+      }
+    } catch (error) {
+      toast.error("Error loading user data");
+    } finally {
+      setLoading(false); // always stop loading
+    }
+  };
+
+  fetchAllUserData();
+}, [user]);
+
 
     const value = {
         currency, allCourses ,navigate, 
         calculateRating, isEducator, setIsEducator, calculateNoOfLectures, calculateCourseDuration,
         calculateChapterTime, enrolledCourses, fetchUserEnrolledCourses, backendUrl, userData, setUserData,
-        getToken, fetchAllCourses
+        getToken, fetchAllCourses, loading
 
     }
 

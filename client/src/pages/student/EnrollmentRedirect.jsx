@@ -15,7 +15,7 @@ const EnrollmentRedirect = () => {
       navigate('/my-enrollments');
     }, 1500); // Redirect after 1.5 seconds
 
-    return () => clearTimeout(timer); // cleanup
+    return () => clearTimeout(timer); 
   }, [navigate]);
 
   return <Loading />;
