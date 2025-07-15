@@ -31,7 +31,7 @@ const Footer = () => {
         <div className='hidden md:flex flex-col items-start w-full'>
           <h2 className='font-semibold text-white mb-5'>Subscribe to our newsletter</h2>
           <p className='text-sm text-white/80'>The latest news, articles, and resources, sent to your inbox weekly.</p>
-          <div className='flex items-center gap-2 pt-4'>
+          <div className='md:flex flex-col items-center gap-2 pt-4'>
             <input type="email" placeholder='Enter Your Email'
             className='border border-gray-500/30 bg-gray-800 text-gray-500 placeholder-gray-500 outline-none w-64 h-9 rounded px-2 text-sm'/>
             <button 
