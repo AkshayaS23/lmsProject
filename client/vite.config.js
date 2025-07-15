@@ -11,10 +11,10 @@ export default defineConfig(({ mode }) => {
 
       viteStaticCopy({
         targets: [
-          {
-            src: 'public/404.html', 
-            dest: '.' 
-          }
+      
+           { src: 'public/404.html', dest: '.' },
+          { src: '.nojekyll', dest: '.' },
+          
         ]
       })
     ]
