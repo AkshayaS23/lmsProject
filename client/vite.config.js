@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
         targets: [
       
            { src: 'public/404.html', dest: '.' },
-          { src: '.nojekyll', dest: '.' },
+           { src: 'public/.nojekyll', dest: '.' },
           
         ]
       })
