@@ -70,8 +70,8 @@ export const purchaseCourse = async (req, res)=>{
         }]
 
         const session = await stripeInstance.checkout.sessions.create({
-            success_url: `${origin}/#/loading/my-enrollments`,
-            cancel_url: `${origin}/#/`,
+            success_url: `https://akshayas23.github.io/lmsProject/#/loading/my-enrollments`,
+            cancel_url: `https://akshayas23.github.io/lmsProject/#/`,
             line_items: line_items,
             mode: 'payment',
             metadata: {
